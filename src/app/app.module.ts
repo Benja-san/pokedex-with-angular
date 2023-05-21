@@ -1,18 +1,15 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Meta } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PokemonsComponent } from './pokemons/pokemons.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent, PokemonsComponent, HomeComponent],
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [Meta],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
