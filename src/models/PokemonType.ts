@@ -1,3 +1,7 @@
 export class PokemonType {
-  constructor(public name: string) {}
+  constructor(public _name: string = 'plante') {}
+
+  get name(): string {
+    return this._name;
+  }
 }

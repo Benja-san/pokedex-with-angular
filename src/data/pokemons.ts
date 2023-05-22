@@ -1,21 +1,21 @@
 import { Pokemon } from '../models/Pokemon';
-import { PokemonType } from '../models/PokemonType';
+import { POKEMON_TYPES } from './pokemonTypes';
 import { ROUTES } from './routes';
 
 export const POKEMONS: Pokemon[] = [
   new Pokemon('malvalame', 167, `${ROUTES.pokemonsFolder}malvalame.png`, [
-    new PokemonType('feu'),
-    new PokemonType('spectre'),
+    POKEMON_TYPES[6],
+    POKEMON_TYPES[15],
   ]),
   new Pokemon('arboliva', 86, `${ROUTES.pokemonsFolder}arboliva.png`, [
-    new PokemonType('plante'),
-    new PokemonType('normal'),
+    POKEMON_TYPES[9],
+    POKEMON_TYPES[8],
   ]),
   new Pokemon('raichu', 75, `${ROUTES.pokemonsFolder}raichu.png`, [
-    new PokemonType('electrik'),
+    POKEMON_TYPES[4],
   ]),
   new Pokemon('leviator', 135, `${ROUTES.pokemonsFolder}leviator.png`, [
-    new PokemonType('eau'),
-    new PokemonType('vol'),
+    POKEMON_TYPES[3],
+    POKEMON_TYPES[17],
   ]),
 ];
