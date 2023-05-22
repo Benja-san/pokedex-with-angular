@@ -1,10 +1,14 @@
-<ul>
-  <li *ngFor="let pokemon of pokemons">
-    <a routerLink="/pokemon/{{ pokemon.number }}">
-      <h2>{{ pokemon.name }}</h2>
-      <img src="{{ pokemon.picture }}" alt="{{ pokemon.name }}" />
-      <ul>
-        <li *ngFor="let type of pokemon.pokemonTypes">
+<ul class="pokemons-container">
+  <li class="pokemon-card" *ngFor="let pokemon of pokemons">
+    <a class="pokemon-link" routerLink="/pokemon/{{ pokemon.number }}">
+      <h2 class="pokemon-name">{{ pokemon.name }}</h2>
+      <img
+        class="pokemon-picture"
+        src="{{ pokemon.picture }}"
+        alt="{{ pokemon.name }}"
+      />
+      <ul class="pokemon-types-container">
+        <li class="pokemon-type" *ngFor="let type of pokemon.pokemonTypes">
           {{ type.name }}
         </li>
       </ul>

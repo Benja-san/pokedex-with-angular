@@ -1,0 +1,50 @@
+@import "../../imports";
+
+$cardSize: 30vmax;
+
+.pokemons-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 4rem 2rem;
+  .pokemon-card {
+    width: $cardSize;
+    height: $cardSize;
+    border: 1px solid $brightColor;
+    .pokemon-link {
+      position: relative;
+      display: block;
+      .pokemon-name {
+        position: absolute;
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+        top: -1rem;
+        left: 0.5rem;
+        z-index: 1;
+        background-color: $darkColor;
+      }
+      .pokemon-picture {
+        width: 80%;
+        height: $cardSize;
+        object-fit: contain;
+        position: absolute;
+        display: block;
+        top: -20%;
+        left: 10%;
+      }
+      .pokemon-types-container {
+        font-family: $defaultFont;
+        font-size: 16px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        position: absolute;
+        bottom: calc(-24px - $cardSize);
+        right: 0;
+        gap: 1rem;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
