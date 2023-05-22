@@ -1,1 +1,13 @@
-<p>pokemons works!</p>
+<ul>
+  <li *ngFor="let pokemon of pokemons">
+    <a routerLink="/pokemon/{{ pokemon.number }}">
+      <h2>{{ pokemon.name }}</h2>
+      <img src="{{ pokemon.picture }}" alt="{{ pokemon.name }}" />
+      <ul>
+        <li *ngFor="let type of pokemon.pokemonTypes">
+          {{ type.name }}
+        </li>
+      </ul>
+    </a>
+  </li>
+</ul>

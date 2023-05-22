@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
+import { Pokemon } from '../../models/Pokemon';
+import { POKEMONS } from 'src/data/pokemons';
 
 @Component({
   selector: 'app-pokemons',
@@ -7,8 +9,10 @@ import { Meta } from '@angular/platform-browser';
   styleUrls: ['./pokemons.component.scss'],
 })
 export class PokemonsComponent {
+  pokemons: Pokemon[];
   constructor(private metaService: Meta) {
     this.addTag();
+    this.pokemons = POKEMONS;
   }
   addTag() {
     this.metaService.addTag({
