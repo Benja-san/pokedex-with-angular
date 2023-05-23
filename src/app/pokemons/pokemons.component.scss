@@ -54,12 +54,13 @@ $verticalLogoSpace: 0.5rem;
       }
       .pokemon-types-container {
         font-family: $defaultFont;
-        font-size: 16px;
+        font-size: 12px;
+        letter-spacing: 1px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         position: absolute;
-        bottom: calc(-24px - $smallCardSize);
+        bottom: -24px;
         right: 0;
         gap: 1rem;
         text-transform: capitalize;
@@ -76,9 +77,6 @@ $verticalLogoSpace: 0.5rem;
       .pokemon-link {
         .pokemon-picture {
           height: $cardSize;
-        }
-        .pokemon-types-container {
-          bottom: calc(-24px - $cardSize);
         }
       }
     }
