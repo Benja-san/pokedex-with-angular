@@ -6,6 +6,7 @@ $verticalLogoSpace: 0.5rem;
 .pokemons-container {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
   gap: $cardVerticalGutter $cardHorizontalGutter;
   width: 100%;
   margin: 0 auto;
@@ -80,5 +81,11 @@ $verticalLogoSpace: 0.5rem;
         }
       }
     }
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .pokemons-container {
+    justify-content: flex-start;
   }
 }
