@@ -1,36 +1,55 @@
 @import "../../imports";
 
-$cardSize: 30vmax;
+$contentLeftSpace: 0.5rem;
+$verticalLogoSpace: 0.5rem;
 
 .pokemons-container {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 4rem 2rem;
+  gap: $cardVerticalGutter $cardHorizontalGutter;
+  width: 100%;
+  margin: 0 auto;
   .pokemon-card {
-    width: $cardSize;
-    height: $cardSize;
+    width: $smallCardSize;
+    height: $smallCardSize;
     border: 1px solid $brightColor;
     .pokemon-link {
       position: relative;
       display: block;
+      width: 100%;
+      height: 100%;
+      .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        .logo {
+          display: block;
+          position: absolute;
+          width: 30px;
+          object-fit: contain;
+          bottom: $verticalLogoSpace;
+          left: $contentLeftSpace;
+          opacity: 0.4;
+        }
+      }
       .pokemon-name {
         position: absolute;
         font-size: 1.6rem;
         letter-spacing: 1px;
         top: -1rem;
-        left: 0.5rem;
+        left: $contentLeftSpace;
         z-index: 1;
-        background-color: $darkColor;
+        text-shadow: $darkColor -4px 4px 0px;
       }
       .pokemon-picture {
         width: 80%;
-        height: $cardSize;
+        height: $smallCardSize;
         object-fit: contain;
         position: absolute;
         display: block;
-        top: -20%;
+        top: -5%;
         left: 10%;
       }
       .pokemon-types-container {
@@ -40,10 +59,27 @@ $cardSize: 30vmax;
         justify-content: flex-start;
         align-items: center;
         position: absolute;
-        bottom: calc(-24px - $cardSize);
+        bottom: calc(-24px - $smallCardSize);
         right: 0;
         gap: 1rem;
         text-transform: capitalize;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .pokemons-container {
+    .pokemon-card {
+      width: $cardSize;
+      height: $cardSize;
+      .pokemon-link {
+        .pokemon-picture {
+          height: $cardSize;
+        }
+        .pokemon-types-container {
+          bottom: calc(-24px - $cardSize);
+        }
       }
     }
   }

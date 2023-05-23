@@ -1,6 +1,15 @@
 <ul class="pokemons-container">
   <li class="pokemon-card" *ngFor="let pokemon of pokemons">
     <a class="pokemon-link" routerLink="/pokemon/{{ pokemon.number }}">
+      <div
+        class="background"
+        [ngStyle]="{ backgroundColor: pokemon.pokemonTypes[0].bColor }"
+      >
+        <img
+          class="logo"
+          src="{{ pictureRoute + pokemon.pokemonTypes[0].picture }}.png"
+        />
+      </div>
       <h2 class="pokemon-name">{{ pokemon.name }}</h2>
       <img
         class="pokemon-picture"

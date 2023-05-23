@@ -9,7 +9,7 @@ export const POKEMONS: Pokemon[] = [
   ]),
   new Pokemon('arboliva', 86, `${ROUTES.pokemonsFolder}arboliva.png`, [
     POKEMON_TYPES[9],
-    POKEMON_TYPES[8],
+    POKEMON_TYPES[10],
   ]),
   new Pokemon('raichu', 75, `${ROUTES.pokemonsFolder}raichu.png`, [
     POKEMON_TYPES[4],

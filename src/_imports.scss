@@ -7,7 +7,7 @@ $whiteColor: #fffafa;
 $titleFont: "Bebas Neue", sans-serif;
 $defaultFont: "Libre Baskerville", serif;
 
-$electricBackground: #f2cb07;
-.background-4 {
-  background-color: $electricBackground;
-}
+$cardSize: 300px;
+$smallCardSize: 200px;
+$cardHorizontalGutter: 1rem;
+$cardVerticalGutter: 3rem;
