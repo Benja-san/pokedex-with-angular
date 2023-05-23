@@ -10,6 +10,21 @@
           src="{{ pictureRoute + pokemon.pokemonTypes[0].picture }}.png"
         />
       </div>
+      <div
+        class="background"
+        *ngIf="pokemon.pokemonTypes.length > 1"
+        [ngStyle]="{
+          background:
+            'linear-gradient(-150deg, ' +
+            pokemon.pokemonTypes[1].bColor +
+            ' 50%, #00000000 0)'
+        }"
+      >
+        <img
+          class="logo"
+          src="{{ pictureRoute + pokemon.pokemonTypes[1].picture }}.png"
+        />
+      </div>
       <h2 class="pokemon-name">{{ pokemon.name }}</h2>
       <img
         class="pokemon-picture"
