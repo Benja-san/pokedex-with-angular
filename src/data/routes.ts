@@ -1,10 +1,13 @@
 import { environment } from 'src/environments/environment.development';
 
+const FRONTEND_URL = {
+  dev: environment.frontend,
+};
+
 const ROUTES = {
-  frontend: environment.frontend,
   pokemonsFolder: 'assets/pokemons/',
   pokemonTypesFolder: 'assets/pokemonTypes/',
   globalfolder: 'assets/global/',
 };
 
-export { ROUTES };
+export { ROUTES, FRONTEND_URL };

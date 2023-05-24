@@ -10,16 +10,25 @@ import { ROUTES } from 'src/data/routes';
   styleUrls: ['./pokemons.component.scss'],
 })
 export class PokemonsComponent {
-  pictureRoute: string;
-  pokemons: Pokemon[];
+  private _pictureRoute: string;
+  private _pokemons: Pokemon[];
   constructor(private metaService: Meta) {
     this.addTag();
-    this.pokemons = POKEMONS;
-    this.pictureRoute = ROUTES.pokemonTypesFolder;
+    this._pokemons = POKEMONS;
+    this._pictureRoute = ROUTES.pokemonTypesFolder;
   }
   ngOnInit(): void {
     console.log(this.pictureRoute);
   }
+
+  public get pictureRoute(): string {
+    return this._pictureRoute;
+  }
+
+  public get pokemons(): Pokemon[] {
+    return this._pokemons;
+  }
+
   addTag() {
     this.metaService.addTag({
       name: 'description',

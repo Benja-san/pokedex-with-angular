@@ -10,6 +10,7 @@ export class HomeComponent {
   constructor(private metaService: Meta) {
     this.addTag();
   }
+  ngOnInit(): void {}
   addTag() {
     this.metaService.addTag({
       name: 'description',
