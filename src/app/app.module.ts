@@ -7,9 +7,16 @@ import { AppComponent } from './app.component';
 import { PokemonsComponent } from './pokemons/pokemons.component';
 import { HomeComponent } from './home/home.component';
 import { HoveringEffectDirective } from './hovering-effect.directive';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, PokemonsComponent, HomeComponent, HoveringEffectDirective],
+  declarations: [
+    AppComponent,
+    PokemonsComponent,
+    HomeComponent,
+    HoveringEffectDirective,
+    PageNotFoundComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [Meta],
   bootstrap: [AppComponent],

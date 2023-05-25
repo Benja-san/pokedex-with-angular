@@ -1,4 +1,4 @@
-@import "./imports";
+@use "./imports" as *;
 
 * {
   margin: 0;
@@ -37,6 +37,10 @@ h6,
 a,
 button {
   font-family: $titleFont;
+}
+
+h1 {
+  letter-spacing: 1px;
 }
 
 ul,

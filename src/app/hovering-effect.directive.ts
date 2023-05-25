@@ -5,15 +5,13 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 })
 export class HoveringEffectDirective {
   private highlight(color: string) {
-    this.el.nativeElement.style.boxShadow = '-4px 4px 0px ' + color;
+    this.el.nativeElement.style.boxShadow = '-2px 2px 12px ' + color;
   }
 
-  constructor(private el: ElementRef) {
-    this.el.nativeElement.style.transition = 'box-shadow 0.4s';
-  }
+  constructor(private el: ElementRef) {}
 
   @HostListener('mouseenter') onMouseEnter() {
-    this.highlight('#ffffff');
+    this.highlight('rgba(255,255,255,.3');
   }
 
   @HostListener('mouseleave') onMouseLeave() {

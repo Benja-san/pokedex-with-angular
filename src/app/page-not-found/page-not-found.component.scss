@@ -1,0 +1,12 @@
+@use "../../imports" as *;
+
+.not-found-section {
+  @include pageCoveringSection;
+  .link {
+    @include CTAButton;
+    margin: 2rem 0 4rem;
+  }
+  .image {
+    width: 200px;
+  }
+}

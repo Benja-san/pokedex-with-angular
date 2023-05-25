@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ROUTES } from 'src/data/routes';
+import { Router } from '@angular/router';
+import { ROUTES, APP_ROUTES } from 'src/data/routes';
 import { Searchbar } from 'src/models/Searchbar';
 
 @Component({
@@ -9,9 +10,10 @@ import { Searchbar } from 'src/models/Searchbar';
 })
 export class AppComponent {
   private _searchBar: Searchbar = new Searchbar();
-  private _pictureRoute: string = ROUTES.globalfolder;
+  private _pictureRoute: string = ROUTES.globalFolder;
   private _title: string = 'pokedex-app';
-  constructor() {}
+  private _appRoutes: string[] = [APP_ROUTES.home, APP_ROUTES.index];
+  constructor(private router: Router) {}
 
   public get title(): string {
     return this._title;
@@ -28,5 +30,10 @@ export class AppComponent {
   public get pictureRoute(): string {
     return this._pictureRoute;
   }
+
+  public get hasHeader(): boolean {
+    return this._appRoutes.includes(this.router.url);
+  }
+
   ngOnInit(): void {}
 }

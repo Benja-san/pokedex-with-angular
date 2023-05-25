@@ -7,7 +7,14 @@ const FRONTEND_URL = {
 const ROUTES = {
   pokemonsFolder: 'assets/pokemons/',
   pokemonTypesFolder: 'assets/pokemonTypes/',
-  globalfolder: 'assets/global/',
+  globalFolder: 'assets/global/',
 };
 
-export { ROUTES, FRONTEND_URL };
+const APP_ROUTES = {
+  index: '/',
+  home: '/home',
+  pokemons: '/pokemons',
+  pokemon: (slug: string) => `/pokemon/${slug}`,
+};
+
+export { ROUTES, FRONTEND_URL, APP_ROUTES };
