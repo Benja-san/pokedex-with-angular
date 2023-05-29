@@ -14,6 +14,7 @@ const APP_ROUTES = {
   index: '/',
   home: '/home',
   pokemons: '/pokemons',
+  notFound: '/404',
   pokemon: (slug: string) => `/pokemon/${slug}`,
 };
 

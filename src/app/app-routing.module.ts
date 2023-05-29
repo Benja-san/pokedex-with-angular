@@ -27,14 +27,14 @@ const routes: Routes = [
     title: 'PokedexApp : Pokemon :pokemonID',
   },
   {
-    path: '**',
+    path: '404',
     component: PageNotFoundComponent,
     title: 'PokedexApp : Not Found',
   },
   {
-    path: '404',
-    component: PageNotFoundComponent,
-    title: 'PokedexApp : Not Found',
+    path: '**',
+    redirectTo: '404',
+    pathMatch: 'full',
   },
 ];
 

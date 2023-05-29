@@ -11,7 +11,11 @@ import { Searchbar } from 'src/models/Searchbar';
 export class HeaderComponent {
   private _searchBar: Searchbar = new Searchbar();
   private _pictureRoute: string = ROUTES.globalFolder;
-  private _appRoutes: string[] = [APP_ROUTES.home, APP_ROUTES.index];
+  private _appRoutes: string[] = [
+    APP_ROUTES.home,
+    APP_ROUTES.index,
+    APP_ROUTES.notFound,
+  ];
   constructor(private router: Router) {}
   public get searchBar(): Searchbar {
     return this._searchBar;
