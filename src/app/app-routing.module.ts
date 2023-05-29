@@ -3,17 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { PokemonsComponent } from './pokemons/pokemons.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PokemonComponent } from './pokemon/pokemon.component';
 
 const routes: Routes = [
   {
-    path: 'pokemons',
-    component: PokemonsComponent,
-    title: 'PokedexApp : Pokedex',
-  },
-  {
     path: '',
-    component: HomeComponent,
-    title: 'PokedexApp : Welcome',
+    redirectTo: 'home',
+    pathMatch: 'full',
   },
   {
     path: 'home',
@@ -21,7 +17,22 @@ const routes: Routes = [
     title: 'PokedexApp : Welcome',
   },
   {
+    path: 'pokemons',
+    component: PokemonsComponent,
+    title: 'PokedexApp : Pokedex',
+  },
+  {
+    path: 'pokemons/:pokemonID',
+    component: PokemonComponent,
+    title: 'PokedexApp : Pokemon :pokemonID',
+  },
+  {
     path: '**',
+    component: PageNotFoundComponent,
+    title: 'PokedexApp : Not Found',
+  },
+  {
+    path: '404',
     component: PageNotFoundComponent,
     title: 'PokedexApp : Not Found',
   },

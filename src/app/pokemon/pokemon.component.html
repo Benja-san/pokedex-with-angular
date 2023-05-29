@@ -1,0 +1,14 @@
+<section class="pokemon-section">
+  <h1 class="title">
+    {{ pokemon.name }}<span>{{ pokemon.number }}</span>
+  </h1>
+  <h2 class="types-title">Types</h2>
+  <ul class="types-container">
+    <li class="type" *ngFor="let type of pokemon.pokemonTypes">
+      {{ type.name }}
+    </li>
+  </ul>
+  <div class="picture">
+    <img src="{{ pokemon.picture }}" alt="{{ pokemon.name }}" />
+  </div>
+</section>

@@ -1,15 +1,4 @@
-<header *ngIf="!hasHeader" class="global-header">
-  <a class="global-link" routerLink="/pokemons">
-    <img
-      src="{{ pictureRoute + 'pokedex-app-icon.png' }}"
-      alt="PokedexApp link to pokedex"
-    />
-  </a>
-  <div class="searchTest">
-    <input [(ngModel)]="searchBar.textInput" />
-    <p>you are searching for : {{ searchBar.textInput }}</p>
-  </div>
-</header>
+<app-header></app-header>
 <main class="main">
   <router-outlet></router-outlet>
 </main>

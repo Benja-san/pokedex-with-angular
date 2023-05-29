@@ -8,6 +8,8 @@ import { PokemonsComponent } from './pokemons/pokemons.component';
 import { HomeComponent } from './home/home.component';
 import { HoveringEffectDirective } from './hovering-effect.directive';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PokemonComponent } from './pokemon/pokemon.component';
+import { HeaderComponent } from './global/header/header.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HomeComponent,
     HoveringEffectDirective,
     PageNotFoundComponent,
+    PokemonComponent,
+    HeaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [Meta],

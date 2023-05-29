@@ -1,0 +1,13 @@
+.global-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  .global-link {
+    width: 45px;
+    img {
+      width: 100%;
+    }
+  }
+}

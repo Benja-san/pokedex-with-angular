@@ -1,6 +1,6 @@
 <ul class="pokemons-container">
-  <li class="pokemon-card" *ngFor="let pokemon of pokemons">
-    <a class="pokemon-link" routerLink="/pokemon/{{ pokemon.number }}">
+  <li class="pokemon-card" *ngFor="let pokemon of pokemons; let key = index">
+    <a class="pokemon-link" routerLink="/pokemons/{{ key + 1 }}">
       <div
         class="background"
         [ngStyle]="{ backgroundColor: pokemon.pokemonTypes[0].bColor }"
