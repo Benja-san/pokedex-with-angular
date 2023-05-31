@@ -9,7 +9,7 @@ import { Searchbar } from 'src/models/Searchbar';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  @Input() searchbar: Searchbar = new Searchbar();
+  @Input() searchbar!: Searchbar;
   private _pictureRoute: string = ROUTES.globalFolder;
   private _appRoutes: string[] = [
     APP_ROUTES.home,

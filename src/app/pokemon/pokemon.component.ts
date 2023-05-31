@@ -9,7 +9,7 @@ import { Pokemon } from 'src/models/Pokemon';
   styleUrls: ['./pokemon.component.scss'],
 })
 export class PokemonComponent implements OnInit {
-  public pokemonID!: number;
+  private _pokemonID!: number;
   private _pokemons: Pokemon[] = POKEMONS;
   private _pokemon!: Pokemon | undefined;
 
@@ -17,9 +17,9 @@ export class PokemonComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.pokemonID = parseInt(params.get('pokemonID') as string);
+      this._pokemonID = parseInt(params.get('pokemonID') as string);
     });
-    this._pokemon = this._pokemons[this.pokemonID - 1];
+    this._pokemon = this._pokemons[this._pokemonID - 1];
   }
 
   get pokemon(): Pokemon {

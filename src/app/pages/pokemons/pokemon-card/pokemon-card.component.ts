@@ -10,5 +10,9 @@ import { ROUTES } from 'src/data/routes';
 export class PokemonCardComponent {
   @Input() pokemon!: Pokemon;
   @Input() key!: number;
-  pictureRoute: string = ROUTES.pokemonTypesFolder;
+  private _pictureRoute: string = ROUTES.pokemonTypesFolder;
+
+  get pictureRoute(): string {
+    return this._pictureRoute;
+  }
 }
