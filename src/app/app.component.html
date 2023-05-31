@@ -1,7 +1,8 @@
-<app-header [searchbar]="searchbar"></app-header>
-<div>
-  <p>you are searching for : {{ searchbar.textInput }}</p>
-</div>
+<app-header [searchbar]="searchbar">
+  <div>
+    <p>you are searching for : {{ searchbar.textInput }}</p>
+  </div>
+</app-header>
 <main class="main">
   <router-outlet></router-outlet>
 </main>

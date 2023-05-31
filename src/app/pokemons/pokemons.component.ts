@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 import { Pokemon } from '../../models/Pokemon';
 import { POKEMONS } from 'src/data/pokemons';
@@ -9,17 +9,14 @@ import { ROUTES } from 'src/data/routes';
   templateUrl: './pokemons.component.html',
   styleUrls: ['./pokemons.component.scss'],
 })
-export class PokemonsComponent {
-  private _pictureRoute: string;
-  private _pokemons: Pokemon[];
+export class PokemonsComponent implements OnInit {
+  private _pictureRoute: string = ROUTES.pokemonTypesFolder;
+  private _pokemons: Pokemon[] = POKEMONS;
+
   constructor(private metaService: Meta) {
     this.addTag();
-    this._pokemons = POKEMONS;
-    this._pictureRoute = ROUTES.pokemonTypesFolder;
   }
-  ngOnInit(): void {
-    console.log(this.pictureRoute);
-  }
+  ngOnInit(): void {}
 
   public get pictureRoute(): string {
     return this._pictureRoute;

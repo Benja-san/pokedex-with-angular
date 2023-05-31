@@ -10,6 +10,7 @@ import { HoveringEffectDirective } from './hovering-effect.directive';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { HeaderComponent } from './global/header/header.component';
+import { PokemonCardComponent } from './pages/pokemons/pokemon-card/pokemon-card.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HeaderComponent } from './global/header/header.component';
     PageNotFoundComponent,
     PokemonComponent,
     HeaderComponent,
+    PokemonCardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [Meta],
