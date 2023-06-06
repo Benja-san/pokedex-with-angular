@@ -1,6 +1,7 @@
 import { PokemonType } from './PokemonType';
 
 export class Pokemon {
+  static readonly MAX_LEVEL = 100;
   constructor(
     private _name: string,
     private _number: number,

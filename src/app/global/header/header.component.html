@@ -5,8 +5,8 @@
       alt="PokedexApp link to pokedex"
     />
   </a>
-  <div class="searchTest">
-    <input [(ngModel)]="searchbar.textInput" />
+  <div class="search-test">
+    <input (input)="searchPokemon()" [(ngModel)]="searchbar.textInput" />
     <ng-content></ng-content>
   </div>
 </header>

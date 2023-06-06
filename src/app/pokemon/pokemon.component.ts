@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { POKEMONS } from 'src/data/pokemons';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Pokemon } from 'src/models/Pokemon';
+import { PokemonsService } from '../services/pokemons.service';
 
 @Component({
   selector: 'app-pokemon',
@@ -10,23 +10,21 @@ import { Pokemon } from 'src/models/Pokemon';
 })
 export class PokemonComponent implements OnInit {
   private _pokemonID!: number;
-  private _pokemons: Pokemon[] = POKEMONS;
-  private _pokemon!: Pokemon | undefined;
+  private _pokemon!: Pokemon | boolean;
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private route: ActivatedRoute,
+    private pokemonsService: PokemonsService
+  ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this._pokemonID = parseInt(params.get('pokemonID') as string);
     });
-    this._pokemon = this._pokemons[this._pokemonID - 1];
+    this._pokemon = this.pokemonsService.getPokemonById(this._pokemonID);
   }
 
   get pokemon(): Pokemon {
-    if (!this._pokemon) {
-      this.router.navigate(['/404']);
-      throw new Error('Pokemon not found');
-    }
-    return this._pokemon;
+    return this._pokemon as Pokemon;
   }
 }

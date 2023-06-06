@@ -1,7 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { PokemonsService } from 'src/app/services/pokemons.service';
 import { ROUTES, APP_ROUTES } from 'src/data/routes';
 import { Searchbar } from 'src/models/Searchbar';
+import { SearchService } from 'src/app/services/search.service';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +18,7 @@ export class HeaderComponent {
     APP_ROUTES.index,
     APP_ROUTES.notFound,
   ];
-  constructor(private router: Router) {}
+  constructor(private router: Router, private searchService: SearchService) {}
 
   public get pictureRoute(): string {
     return this._pictureRoute;
@@ -26,7 +28,9 @@ export class HeaderComponent {
     return this._appRoutes.includes(this.router.url);
   }
 
-  ngOnInit(): void {
-    console.log(this.router.url);
+  ngOnInit(): void {}
+
+  public searchPokemon(): void {
+    this.searchService.setSearchInput(this.searchbar.textInput);
   }
 }

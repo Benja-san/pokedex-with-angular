@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 import { Pokemon } from '../../models/Pokemon';
-import { POKEMONS } from 'src/data/pokemons';
 import { ROUTES } from 'src/data/routes';
+import { PokemonsService } from 'src/app/services/pokemons.service';
+import { SearchService } from 'src/app/services/search.service';
 
 @Component({
   selector: 'app-pokemons',
@@ -11,19 +12,25 @@ import { ROUTES } from 'src/data/routes';
 })
 export class PokemonsComponent implements OnInit {
   private _pictureRoute: string = ROUTES.pokemonTypesFolder;
-  private _pokemons: Pokemon[] = POKEMONS;
+  public pokemons: Pokemon[] = [];
 
-  constructor(private metaService: Meta) {
+  constructor(
+    private metaService: Meta,
+    private pokemonsService: PokemonsService,
+    private searchService: SearchService
+  ) {
     this.addTag();
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.pokemons = this.pokemonsService.pokemons;
+    this.searchService.searchIput$.subscribe((searchInput: string) => {
+      this.pokemons =
+        this.pokemonsService.filterPokemonsByResearch(searchInput);
+    });
+  }
 
   public get pictureRoute(): string {
     return this._pictureRoute;
-  }
-
-  public get pokemons(): Pokemon[] {
-    return this._pokemons;
   }
 
   addTag() {

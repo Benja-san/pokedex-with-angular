@@ -18,4 +18,7 @@ export const POKEMONS: Pokemon[] = [
     POKEMON_TYPES[3],
     POKEMON_TYPES[17],
   ]),
+  new Pokemon('leveinard', 44, `${ROUTES.pokemonsFolder}leveinard.png`, [
+    POKEMON_TYPES[9],
+  ]),
 ];
