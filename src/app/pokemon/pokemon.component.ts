@@ -9,7 +9,7 @@ import { PokemonsService } from '../services/pokemons.service';
   styleUrls: ['./pokemon.component.scss'],
 })
 export class PokemonComponent implements OnInit {
-  private _pokemonID!: number;
+  private _pokemonSlug!: string;
   private _pokemon!: Pokemon | boolean;
 
   constructor(
@@ -19,9 +19,9 @@ export class PokemonComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this._pokemonID = parseInt(params.get('pokemonID') as string);
+      this._pokemonSlug = params.get('pokemonSlug') as string;
     });
-    this._pokemon = this.pokemonsService.getPokemonById(this._pokemonID);
+    this._pokemon = this.pokemonsService.getPokemonBySlug(this._pokemonSlug);
   }
 
   get pokemon(): Pokemon {

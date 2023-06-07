@@ -1,5 +1,5 @@
 <ul class="pokemons-container">
-  <li class="pokemon-card" *ngFor="let pokemon of pokemons; let key = index">
-    <app-pokemon-card [pokemon]="pokemon" [key]="key"></app-pokemon-card>
+  <li class="pokemon-card" *ngFor="let pokemon of pokemons$ | async">
+    <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
   </li>
 </ul>

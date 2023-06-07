@@ -4,6 +4,7 @@ export class Pokemon {
   static readonly MAX_LEVEL = 100;
   constructor(
     private _name: string,
+    private _slug: string,
     private _number: number,
     private _picture: string,
     private _pokemonTypes: PokemonType[]
@@ -11,6 +12,10 @@ export class Pokemon {
 
   public get name(): string {
     return this._name;
+  }
+
+  public get slug(): string {
+    return this._slug;
   }
 
   public get number(): number {

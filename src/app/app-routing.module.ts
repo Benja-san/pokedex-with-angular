@@ -22,9 +22,9 @@ const routes: Routes = [
     title: 'PokedexApp : Pokedex',
   },
   {
-    path: 'pokemons/:pokemonID',
+    path: 'pokemons/:pokemonSlug',
     component: PokemonComponent,
-    title: 'PokedexApp : Pokemon :pokemonID',
+    title: 'PokedexApp : Votre pokemon',
   },
   {
     path: '404',

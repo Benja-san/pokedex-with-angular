@@ -4,6 +4,7 @@ import { Pokemon } from '../../models/Pokemon';
 import { ROUTES } from 'src/data/routes';
 import { PokemonsService } from 'src/app/services/pokemons.service';
 import { SearchService } from 'src/app/services/search.service';
+import { Observable, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-pokemons',
@@ -12,7 +13,8 @@ import { SearchService } from 'src/app/services/search.service';
 })
 export class PokemonsComponent implements OnInit {
   private _pictureRoute: string = ROUTES.pokemonTypesFolder;
-  public pokemons: Pokemon[] = [];
+  // public pokemons: Pokemon[] = [];
+  public pokemons$!: Observable<Pokemon[]>;
 
   constructor(
     private metaService: Meta,
@@ -22,11 +24,16 @@ export class PokemonsComponent implements OnInit {
     this.addTag();
   }
   ngOnInit(): void {
-    this.pokemons = this.pokemonsService.pokemons;
-    this.searchService.searchIput$.subscribe((searchInput: string) => {
-      this.pokemons =
-        this.pokemonsService.filterPokemonsByResearch(searchInput);
-    });
+    // this.pokemons = this.pokemonsService.pokemons;
+    // this.searchService.searchIput$.subscribe((searchInput: string) => {
+    //   this.pokemons =
+    //     this.pokemonsService.filterPokemonsByResearch(searchInput);
+    // });
+    this.pokemons$ = this.searchService.searchIput$.pipe(
+      switchMap((searchInput: string) => {
+        return this.pokemonsService.filterPokemonsByResearch(searchInput);
+      })
+    );
   }
 
   public get pictureRoute(): string {

@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { PokemonsService } from 'src/app/services/pokemons.service';
 import { ROUTES, APP_ROUTES } from 'src/data/routes';
 import { Searchbar } from 'src/models/Searchbar';
 import { SearchService } from 'src/app/services/search.service';
